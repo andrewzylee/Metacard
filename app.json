@@ -1,0 +1,8 @@
+{
+  "name": "MetapaydMVP",
+  "displayName": "Metapayd",
+  "react-native": {
+    "android_package": "com.metapayd.mvp",
+    "project_name": "MetapaydMVP"
+  }
+} 

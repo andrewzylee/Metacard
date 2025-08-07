@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metapayd Smart Selector</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span class="logo-icon">💳</span>
+                <span class="logo-text">Metapayd</span>
+            </div>
+            <button class="settings-btn" id="settingsBtn">⚙️</button>
+        </div>
+
+        <!-- Current Site Analysis -->
+        <div class="site-analysis" id="siteAnalysis">
+            <div class="site-info">
+                <span class="site-icon" id="siteIcon">🛒</span>
+                <div class="site-details">
+                    <div class="site-name" id="siteName">Loading...</div>
+                    <div class="site-category" id="siteCategory">Analyzing...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Card -->
+        <div class="card-recommendation" id="cardRecommendation">
+            <div class="recommendation-header">
+                <span class="recommendation-icon">🎯</span>
+                <span class="recommendation-title">Recommended Card</span>
+            </div>
+            
+            <div class="recommended-card" id="recommendedCard">
+                <div class="card-visual">
+                    <div class="card-name" id="cardName">Loading...</div>
+                    <div class="card-number" id="cardNumber">•••• ••••</div>
+                </div>
+                <div class="card-benefit">
+                    <div class="reward-rate" id="rewardRate">--%</div>
+                    <div class="reward-label">rewards</div>
+                </div>
+            </div>
+
+            <div class="recommendation-details">
+                <div class="expected-reward">
+                    <span>Expected reward: </span>
+                    <span class="reward-amount" id="expectedReward">$0.00</span>
+                </div>
+                <div class="reasoning" id="reasoning">
+                    Best available rate for this merchant
+                </div>
+            </div>
+        </div>
+
+        <!-- Alternative Cards -->
+        <div class="alternatives" id="alternatives">
+            <div class="alternatives-header">Other Options</div>
+            <div class="alternatives-list" id="alternativesList">
+                <!-- Alternative cards will be populated here -->
+            </div>
+        </div>
+
+        <!-- Auto-fill Toggle -->
+        <div class="controls">
+            <div class="toggle-container">
+                <label class="toggle-label">
+                    <input type="checkbox" id="autoFillToggle" checked>
+                    <span class="toggle-slider"></span>
+                    Auto-fill optimal card
+                </label>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+            <button class="btn btn-primary" id="selectCardBtn">
+                Select This Card
+            </button>
+            <button class="btn btn-secondary" id="manualSelectBtn">
+                Choose Different Card
+            </button>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats" id="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="monthlyRewards">$0.00</div>
+                <div class="stat-label">This Month</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="optimizationRate">0%</div>
+                <div class="stat-label">Optimized</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="totalSavings">$0.00</div>
+                <div class="stat-label">Total Saved</div>
+            </div>
+        </div>
+
+        <!-- Status Messages -->
+        <div class="status-message" id="statusMessage" style="display: none;">
+            <div class="status-icon" id="statusIcon">ℹ️</div>
+            <div class="status-text" id="statusText">Status message</div>
+        </div>
+
+        <!-- Settings Panel (Hidden by default) -->
+        <div class="settings-panel" id="settingsPanel" style="display: none;">
+            <div class="settings-header">
+                <span>Settings</span>
+                <button class="close-settings" id="closeSettings">×</button>
+            </div>
+            
+            <div class="setting-group">
+                <label>Primary Goal</label>
+                <select id="primaryGoal">
+                    <option value="cashback">Maximize Cashback</option>
+                    <option value="travel">Travel Rewards</option>
+                    <option value="debt_payoff">Debt Payoff</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label class="toggle-label">
+                    <input type="checkbox" id="alertsEnabled" checked>
+                    <span class="toggle-slider"></span>
+                    Show optimization alerts
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label class="toggle-label">
+                    <input type="checkbox" id="autoOptimize" checked>
+                    <span class="toggle-slider"></span>
+                    Auto-optimize card selection
+                </label>
+            </div>
+
+            <button class="btn btn-primary" id="saveSettings">
+                Save Settings
+            </button>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+            <div class="loader"></div>
+            <div class="loading-text">Analyzing merchant...</div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 
